@@ -1,0 +1,332 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #333;
+}
+
+/* Dashboard container styling */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+    align-items: center;
+    /* Centralizar ícones na barra fixa */
+}
+
+.sidebar.collapsed .profile img.round-profile {
+    width: 40px;
+    /* Define a largura desejada */
+    height: 40px;
+    /* Define a altura desejada */
+}
+
+.sidebar.collapsed .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente os ícones */
+    align-items: center;
+    /* Centraliza horizontalmente os ícones */
+}
+
+.sidebar.collapsed .menu ul li span {
+    display: none;
+    /* Oculta o texto do menu quando a barra está colapsada */
+}
+
+.sidebar.collapsed .edit-profile-icon {
+    display: none;
+    /* Oculta o botão de editar perfil quando a barra está colapsada */
+}
+
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 450px;
+    left: 80%;
+    width: 30px;
+    height: 30px;
+    background: #6e8efb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.sidebar.collapsed .toggle-btn i {
+    transform: rotate(180deg);
+}
+
+.toggle-btn:hover {
+    background: #576aed;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.profile img.round-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.profile h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.edit-profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #6e8efb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.edit-profile-icon:hover {
+    background: #576aed;
+}
+
+.menu {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #6e8efb;
+}
+
+.menu ul li a i {
+    margin-right: 10px;
+    /* Espaçamento entre ícone e texto */
+}
+
+#logoutBtn {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    /* Cor preta */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#logoutBtn i {
+    margin-right: 10px;
+}
+
+#logoutBtn:hover {
+    background: #ff4d4d;
+    /* Hover vermelho no botão de logout */
+}
+
+#logoutBtn span {
+    display: none;
+    /* Oculta o texto do botão de logout */
+}
+
+/* Main content styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    background: #f5f5f5;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed~.content {
+    margin-left: 80px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    color: #999;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #6e8efb;
+    font-size: 12px;
+}
+
+.input-box input:focus {
+    border-bottom: 2px solid #6e8efb;
+}
+
+button {
+    background: #6e8efb;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #576aed;
+}
+
+/* Ícones do FontAwesome */
+.fa {
+    font-size: 20px;
+}
+
+/* Notificações styles */
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.notification-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-5px);
+}
+
+.notification-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.notification-card p {
+    margin: 0;
+    color: #666;
+}

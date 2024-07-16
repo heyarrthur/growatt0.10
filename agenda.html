@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="agenda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="profile">
+                <img id="profilePic" class="round-profile" src="https://via.placeholder.com/100" alt="Profile Picture">
+                <h3>John Doe</h3>
+            </div>
+            <div class="toggle-btn">
+                <i class="fas fa-angle-double-left"></i>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#"><i class="fas fa-bell"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>Notificações</span></a></li>
+                    <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> <span>Faturamento</span></a></li>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> <span>Serviços</span></a></li>
+                    <li><a href="#"><i class="fas fa-list"></i> <span>Planos</span></a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> <span>Equipe</span></a></li>
+                    <li><a href="#"><i class="fas fa-store"></i> <span>Minha Loja</span></a></li>
+                    <li><a href="#"><i class="fas fa-tag"></i> <span>Cupons</span></a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> <span>Assinatura</span></a></li>
+                </ul>
+            </div>
+            <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></button>
+        </div>
+
+        <div class="content">
+            <div class="calendar">
+                <div class="month"></div>
+                <div class="days"></div>
+            </div>
+            <div class="events">
+                <h2>Compromissos do dia:</h2>
+                <ul class="event-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Perfil</h2>
+            <div class="input-box">
+                <input type="text" id="firstName" required>
+                <label for="firstName">Nome</label>
+            </div>
+            <div class="input-box">
+                <input type="text" id="lastName" required>
+                <label for="lastName">Sobrenome</label>
+            </div>
+            <div class="input-box">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-box">
+                <input type="text" id="phone" required>
+                <label for="phone">Telefone</label>
+            </div>
+            <div class="input-box">
+                <input type="text" id="address" required>
+                <label for="address">Endereço</label>
+            </div>
+            <button>Salvar</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="agenda.js"></script>
+</body>
+</html>
